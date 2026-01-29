@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Welcome') {
+            steps {
+                echo 'Memulai proses Jenkins Pipeline untuk Belajar...'
+                echo "Menjalankan Build pada User: ${USER}"
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Sedang mengompilasi kode (Simulasi)...'
+                // Di sini biasanya perintah seperti: sh './mvnw clean package'
+                sh 'echo "Project Build Success!" > build_result.txt'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Sedang menjalankan Unit Testing (Simulasi)...'
+                sh 'ls -la'
+                echo 'Semua test berhasil dilewati!'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Sedang mendeploy aplikasi ke server (Simulasi)...'
+                echo 'Aplikasi sekarang sudah LIVE!'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Selesai! Terima kasih sudah menggunakan Jenkins.'
+        }
+        success {
+            echo 'Status: BERHASIL (Success)'
+        }
+        failure {
+            echo 'Status: GAGAL (Check log di atas!)'
+        }
+    }
+}
