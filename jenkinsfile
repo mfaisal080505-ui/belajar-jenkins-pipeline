@@ -4,23 +4,35 @@ pipeline {
     stages {
         stage('Welcome') {
             steps {
-                echo 'Halo Faisal! Sekarang log-nya pasti panjang!'
+                echo '============================================='
+                echo 'HALO FAISAL! PIPELINE SUDAH JALAN SEMPURNA'
+                echo '============================================='
             }
         }
-        stage('Check System') {
+
+        stage('Sistem Check') {
             steps {
-                echo 'Cek isi folder saat ini:'
-                sh 'ls -la'
-                echo 'Cek jam server:'
+                echo 'Memeriksa identitas user...'
+                sh 'whoami'
+                echo 'Memeriksa direktori kerja...'
+                sh 'ls -al'
+                echo 'Memeriksa waktu server...'
                 sh 'date'
             }
         }
-        stage('Simulasi Build') {
+
+        stage('Simulasi Proses') {
             steps {
-                echo 'Lagi pura-pura nge-build project...'
-                sh 'sleep 3'
-                echo 'Build Selesai!'
+                echo 'Sedang mencoba simulasi build project...'
+                sh 'sleep 2'
+                echo 'Build Berhasil!'
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline selesai dieksekusi!'
         }
     }
 }
