@@ -4,44 +4,23 @@ pipeline {
     stages {
         stage('Welcome') {
             steps {
-                echo 'Memulai proses Jenkins Pipeline untuk Belajar...'
-                echo "Menjalankan Build pada User: ${USER}"
+                echo 'Halo Faisal! Sekarang log-nya pasti panjang!'
             }
         }
-
-        stage('Build') {
+        stage('Check System') {
             steps {
-                echo 'Sedang mengompilasi kode (Simulasi)...'
-                // Di sini biasanya perintah seperti: sh './mvnw clean package'
-                sh 'echo "Project Build Success!" > build_result.txt'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Sedang menjalankan Unit Testing (Simulasi)...'
+                echo 'Cek isi folder saat ini:'
                 sh 'ls -la'
-                echo 'Semua test berhasil dilewati!'
+                echo 'Cek jam server:'
+                sh 'date'
             }
         }
-
-        stage('Deploy') {
+        stage('Simulasi Build') {
             steps {
-                echo 'Sedang mendeploy aplikasi ke server (Simulasi)...'
-                echo 'Aplikasi sekarang sudah LIVE!'
+                echo 'Lagi pura-pura nge-build project...'
+                sh 'sleep 3'
+                echo 'Build Selesai!'
             }
-        }
-    }
-
-    post {
-        always {
-            echo 'Selesai! Terima kasih sudah menggunakan Jenkins.'
-        }
-        success {
-            echo 'Status: BERHASIL (Success)'
-        }
-        failure {
-            echo 'Status: GAGAL (Check log di atas!)'
         }
     }
 }
