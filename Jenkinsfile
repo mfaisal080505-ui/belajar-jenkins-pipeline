@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Welcome') {
             steps {
-                echo 'Halo Faisal! Log ini sekarang harusnya panjang.'
+                echo 'Hallo gesss! Log ini sekarang wkwkwk.'
             }
         }
         stage('Check System') {
