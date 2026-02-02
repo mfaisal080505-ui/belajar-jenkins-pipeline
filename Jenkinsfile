@@ -1,11 +1,13 @@
 pipeline {
-  agent {
-    node {
-        label "Linux && java21"
+    agent {
+        node {
+            label "Linux && java21"
+        } 
+    }
     stages {
         stage('Welcome') {
             steps {
-                echo 'Hallo gesss! Log ini sekarang wkwkwk.'
+                echo 'Hallo gesss! Log ini sekarang sudah berhasil dan berjalan dengan mulus.'
             }
         }
         stage('Check System') {
