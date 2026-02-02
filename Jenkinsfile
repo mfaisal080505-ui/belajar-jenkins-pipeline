@@ -4,23 +4,20 @@ pipeline {
             label "Linux && java21"
         }
     }
+
     stages {
         stage("Build") {
             steps {
                 echo 'Halo Faisal! Log ini sekarang berhasil melakukan build.'
             }
         }
-    }
 
-    stages {
         stage("Test") {
             steps {
                 echo 'Halo Faisal! Log ini sekarang berhasil melakukan test.'
             }
         }
-    }
-
-    stages {
+    
         stage("Deploy") {
             steps {
                 echo 'Halo Faisal! Log ini sekarang berhasil melakukan deploy.'
