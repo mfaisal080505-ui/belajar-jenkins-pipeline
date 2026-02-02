@@ -1,20 +1,25 @@
 pipeline {
-    agent {
-        node {
-            label "Linux && java21"
-        } 
-    }
+    agent any
     stages {
-        stage('Welcome') {
+        stage("Hello") {
             steps {
-                echo 'Hallo gesss! Log ini sekarang sudah berhasil dan berjalan dengan mulus.'
+                echo 'Halo Faisal! Log ini sekarang harusnya panjang.'
             }
         }
-        stage('Check System') {
-            steps {
-                echo 'Mengecek waktu server...'
-                sh 'date'
-            }
+    }
+
+    post {
+        always {
+            echo "I will always say Hello again!"
+        }
+        success {
+            echo "Yay, success"
+        }
+        failure {
+            echo "Oh no, failure"
+        }
+        cleanup {
+            echo "Don't care success or error"
         }
     }
 }
