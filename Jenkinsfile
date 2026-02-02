@@ -15,6 +15,7 @@ pipeline {
         stage("Test") {
             steps {
                 echo 'Halo Faisal! Log ini sekarang berhasil melakukan test.'
+                sh("error")
             }
         }
     
