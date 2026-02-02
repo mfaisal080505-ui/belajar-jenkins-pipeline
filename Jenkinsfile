@@ -1,9 +1,29 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label "Linux && java21"
+        }
+    }
     stages {
-        stage("Hello") {
+        stage("Build") {
             steps {
-                echo 'Halo Faisal! Log ini sekarang harusnya panjang.'
+                echo 'Halo Faisal! Log ini sekarang berhasil melakukan build.'
+            }
+        }
+    }
+
+    stages {
+        stage("Test") {
+            steps {
+                echo 'Halo Faisal! Log ini sekarang berhasil melakukan test.'
+            }
+        }
+    }
+
+    stages {
+        stage("Deploy") {
+            steps {
+                echo 'Halo Faisal! Log ini sekarang berhasil melakukan deploy.'
             }
         }
     }
