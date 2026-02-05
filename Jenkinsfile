@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Halo Faisal! Log ini sekarang berhasil melakukan test.'
                 echo("Hello Test 1")
-                def currentDir = pwd()
+                sh 'pwd()'
                 sh 'ls -l'
             }
         }
