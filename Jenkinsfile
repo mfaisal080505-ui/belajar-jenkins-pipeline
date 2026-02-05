@@ -20,9 +20,9 @@ pipeline {
             steps {
                 echo 'Halo Faisal! Log ini sekarang berhasil melakukan test.'
                 echo("Hello Test 1")
-                sleep(4)
-                echo("Hello Test 2")
-                echo("Hello Test 3")
+                pwd
+                tmp : boolean
+                ls -l
             }
         }
     
